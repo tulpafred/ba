@@ -9,8 +9,8 @@ services:
       - PGID=1000
       - TZ=Europe/London
     volumes:
-      - /ba-volumes/smokeping:/config
-      - /ba-volumes/smokeping:/data
+      - /ba-volumes/smokeping/config:/config
+      - /ba-volumes/smokeping/data:/data
     ports:
       - 80:80
     restart: unless-stopped
