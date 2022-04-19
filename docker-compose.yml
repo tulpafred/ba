@@ -4,6 +4,12 @@ services:
   smokeping:
     image: lscr.io/linuxserver/smokeping
     container_name: smokeping
+    networks:
+      - web
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.smokeping.rule=Host(`smokeping.fritz.box`)"
+      - "traefik.http.routers.smokeping.entrypoints=web"
     environment:
       - PUID=1000
       - PGID=1000
@@ -11,8 +17,6 @@ services:
     volumes:
       - ./ba-volumes/smokeping/config:/config
       - ./ba-volumes/smokeping/data:/data
-    ports:
-      - 81:80
     restart: unless-stopped
 
   netdata:
@@ -71,17 +75,14 @@ services:
       - "8080:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-
-  whoami:
-    image: "traefik/whoami"
-    container_name: "simple-service"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`whoami.local`)"
-      - "traefik.http.routers.whoami.entrypoints=web"
-
+    networks:
+      - web
 
 volumes:
   netdataconfig:
   netdatalib:
   netdatacache:
+
+networks:
+  web:
+    external: true
