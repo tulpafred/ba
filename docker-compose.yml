@@ -22,7 +22,7 @@ services:
   netdata:
     image: netdata/netdata
     container_name: netdata
-    hostname: raspi.fritz.box # set to fqdn of host
+    hostname: docker-host-1.fritz.box # set to fqdn of host
     ports:
       - 19999:19999
     restart: unless-stopped
