@@ -26,3 +26,17 @@ services:
       - SYS_PTRACE
     security_opt:
       - apparmor:unconfined
+    volumes:
+      - /ba-volumes/netdata/netdataconfig:/etc/netdata
+      - /ba-volumes/netdata/netdatalib:/var/lib/netdata
+      - /ba-volumes/netdata/netdatacache:/var/cache/netdata
+      - /ba-volumes/netdata//etc/passwd:/host/etc/passwd:ro
+      - /ba-volumes/netdata//etc/group:/host/etc/group:ro
+      - /ba-volumes/netdata//proc:/host/proc:ro
+      - /ba-volumes/netdata//sys:/host/sys:ro
+      - /ba-volumes/netdata//etc/os-release:/host/etc/os-release:ro
+
+volumes:
+  netdataconfig:
+  netdatalib:
+  netdatacache:
