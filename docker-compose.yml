@@ -20,7 +20,7 @@ services:
     container_name: netdata
     hostname: raspi.fritz.box # set to fqdn of host
     ports:
-      - 81:19999
+      - 19999:81
     restart: unless-stopped
     cap_add:
       - SYS_PTRACE
