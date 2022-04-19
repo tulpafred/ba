@@ -8,7 +8,7 @@ services:
       - web
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.smokeping.rule=Host(`smokeping.fritz.box`)"
+      - "traefik.http.routers.smokeping.rule=Host(`smokeping.docker-host-1.fritz.box`)"
       - "traefik.http.routers.smokeping.entrypoints=web"
     environment:
       - PUID=1000
