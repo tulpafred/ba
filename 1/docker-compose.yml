@@ -15,8 +15,8 @@ services:
       - "80:80"
       - '443:443'
       - "8080:8080"
-    volumes:
-      - "ba-volumes/docker.sock:/var/run/docker.sock:ro"
+    #volumes:
+      #- "ba-volumes/docker.sock:/var/run/docker.sock:ro"
 
   smokeping:
     image: lscr.io/linuxserver/smokeping
@@ -25,9 +25,9 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-    volumes:
-      - ba-volumes/smokeping/config:/config
-      - ba-volumes/smokeping/data:/data
+    #volumes:
+      #- ba-volumes/smokeping/config:/config
+      #- ba-volumes/smokeping/data:/data
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
