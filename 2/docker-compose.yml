@@ -16,8 +16,8 @@ services:
       backend:
         ipv4_address: 10.0.1.10
     ports:
-      - '53:53/tcp'
-      - '53:53/udp'
+      #- '53:53/tcp'
+      #- '53:53/udp'
       # Only required if you are using Pi-hole as your DHCP server
       #- '67:67/udp' 
       - '80:80/tcp'
