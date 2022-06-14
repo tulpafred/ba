@@ -63,11 +63,11 @@ services:
     #volumes:
       #- './config-wireguard:/config'
 
-  filebeat:
-    image: "docker.elastic.co/beats/filebeat:7.2.0"
-    user: root
-    volumes:
-      - /dockertest/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-      - /var/lib/docker:/var/lib/docker:ro
-      - /var/run/docker.sock:/var/run/docker.sock
-    restart: unless-stopped
+#  filebeat:
+#    image: "docker.elastic.co/beats/filebeat:7.2.0"
+#    user: root
+#    volumes:
+#      - /dockertest/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+#      - /var/lib/docker:/var/lib/docker:ro
+#      - /var/run/docker.sock:/var/run/docker.sock
+#    restart: unless-stopped
