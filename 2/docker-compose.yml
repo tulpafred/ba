@@ -63,6 +63,12 @@ services:
     #volumes:
       #- './config-wireguard:/config'
 
+  nginx:
+    image: "nginx:1.22.0-perl"
+    container_name: "nginx"
+    restart: unless-stopped
+
+
 #  filebeat:
 #    image: "docker.elastic.co/beats/filebeat:7.2.0"
 #    user: root
