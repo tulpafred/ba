@@ -34,10 +34,6 @@ services:
       - "traefik.http.routers.whoami.rule=Host(`smokeping.ba.tulpow.de`)"
       - "traefik.http.routers.whoami.entrypoints=web"
 
-  nginx:
-    image: "nginx:1.22.0-perl"
-    container_name: "nginx"
-    restart: unless-stopped
 
 #  filebeat:
 #    image: "docker.elastic.co/beats/filebeat:7.2.0"
